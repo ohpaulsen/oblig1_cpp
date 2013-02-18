@@ -22,7 +22,7 @@ Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere d
 
 ##Det som skal programmeres
 - For hver klasse class_*.h, skal du skrive implementasjonen class_*.cpp (med mindre klassen er abstrakt og du finner det unødig å implementere)
-- Tanken med hver klasse er beskrevet i documentation.md, og blackjack-spillet skal implementeres i henhold til blackjack-reglene, over.
+- Tanken med hver klasse er beskrevet i *documentation.md* - der finner du også et diagram over sammenhengen. Blackjack-spillet skal implementeres i henhold til dette designet og blackjack-reglene, over.
 - I tillegg skal du skrive blackjack.cpp, som skal gjøre følgende:
   - Starte et blackjackspill med en spiller og en dealer
   - Spilleren skal hente alle beslutninger fra brukeren, via standard input
@@ -49,7 +49,7 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
   - Diskutere et alternativt programdesign, hvis du har et, eller idéer til et. Er det noe du ville gjort anderledes? Noe du hadde gort anderledes, som gir fordeler eller ulemper?
   - Du kan legge ved din alternative implementasjon, i en mappe kalt "alt" i rotmappen i ditt "repository.
   - Rapporten skal hete "rapport.md" og ligge i rotmappen i ditt "repository" (mer info om dette senere)
-- For å se hvordan markdown-koden for denne rapporten er laget, åpne fila og trykk knappen "Raw" utep på github, eller bare åpne den i en tekst-editor.
+- For å se hvordan markdown-koden for denne rapporten er laget, åpne fila og trykk knappen "Raw" ute på github, eller bare åpne den i en tekst-editor.
 
 Du kan lese mer om .md-formatet generelt, her: [Daring fireball, Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
 og githubs tilpassede versjon her: [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
