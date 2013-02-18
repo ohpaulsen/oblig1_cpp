@@ -51,8 +51,8 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
   - Rapporten skal hete "rapport.md" og ligge i rotmappen i ditt "repository" (mer info om dette senere)
 - For å se hvordan markdown-koden for denne rapporten er laget, åpne fila og trykk knappen "Raw" utep på github, eller bare åpne den i en tekst-editor.
 
-Du kan lese mer om .md-formatet generelt, her: ![Daring fireball, Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
-og githubs tilpassede versjon her: ![Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
+Du kan lese mer om .md-formatet generelt, her: [Daring fireball, Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+og githubs tilpassede versjon her: [Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
 
 ##Hvordan du blir vurdert
 - Hver klasse vil bli vurdert for seg, og gi et antall poeng
