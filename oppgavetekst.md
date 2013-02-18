@@ -26,16 +26,18 @@ Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere d
 - I tillegg skal du skrive blackjack.cpp, som skal gjøre følgende:
   - Starte et blackjackspill med en spiller og en dealer
   - Spilleren skal hente alle beslutninger fra brukeren, via standard input
-- Du skal *ikke* endre på header-filene (.h), med unntak av *blackjackGame.h*, der du kan legge til medlemmer, men ikke fjerne.
+- Du skal *ikke* endre på header-filene (.h), med unntak av *class_blackjackGame.h*, der du kan legge til medlemmer, men ikke fjerne.
 - Det er ikke nødvendig å lage flere klasser. Det er lov, men det bør da motiveres med noen linjer i rapporten.
 
 ##Bruk av git underveis
-Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy. Det anbefales at du kloner git-repositoryet, og jobber direkte i din egen lokale klone (legg den gjerne i dropbox, så får du automatisk backup). Din .git-mappe, med commit-log skal være en del av innleveringen - det anbefales derfor at du committer lokalt hver gang du har implementert noe nytt, slik at loggen blir leselig og viser din fremgangsmåte. **PS:** *Ikke vær bekymret for å vise "tabber" eller gammel, dårlig kode historikken - det er bare fint. Det eneste som har noe å si er resultatet til slutt.*
+Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy. Det anbefales at du kloner git-repositoryet, og jobber direkte i din egen lokale klone (legg den gjerne i dropbox, så får du automatisk backup). Din .git-mappe, med commit-log skal være en del av innleveringen - det anbefales derfor at du committer lokalt hver gang du har implementert noe nytt, slik at loggen blir leselig og viser din fremgangsmåte. 
+
+**PS:** *Ikke vær bekymret for å vise "tabber" eller gammel, dårlig kode i historikken - det er bare fint. Det eneste som har noe å si er resultatet til slutt.*
 
 ##Prioritetsliste - hva er viktigst å implementere? 
 1. Fungerende kort og kortstokk med 52 kort
 2. blackjackGame::playRound() og blackjackGame::start() - dette er selve spillmekanismen.    
-3. En funksjon i blackjackGame.cpp, som avgjør hvor mange poeng en hånd (vector av kort) gir
+3. En funksjon i blackjackGame, som avgjør hvor mange poeng en hånd (vector av kort) gir. Vurder om det bør være en medlemsfunksjon eller en frittstående funksjon.
 4. *Mer kommer*
 
 ##Læringsmål - hva dere skal vise at dere kan
@@ -47,11 +49,15 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
   - Diskutere et alternativt programdesign, hvis du har et, eller idéer til et. Er det noe du ville gjort anderledes? Noe du hadde gort anderledes, som gir fordeler eller ulemper?
   - Du kan legge ved din alternative implementasjon, i en mappe kalt "alt" i rotmappen i ditt "repository.
   - Rapporten skal hete "rapport.md" og ligge i rotmappen i ditt "repository" (mer info om dette senere)
-  
+- For å se hvordan markdown-koden for denne rapporten er laget, åpne fila og trykk knappen "Raw" utep på github, eller bare åpne den i en tekst-editor.
+
+Du kan lese mer om .md-formatet generelt, her: ![Daring fireball, Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+og githubs tilpassede versjon her: ![Github Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
+
 ##Hvordan du blir vurdert
 - Hver klasse vil bli vurdert for seg, og gi et antall poeng
 - blackjack.cpp blir også vurdert for seg
 - Helheten blir vurdert og gir et antall poeng
 
 ##Er dette for mye?
-Nei, jeg tror ikke det. Min implementasjon, med kommentarer og output-tekst er på under 400 linjer. `(cat *.cpp | wc -l)`. Den tok 6-7 timer å lage, og da ble også designet bearbeidet underveis. *Det er på ingen måte relevant hvor mange linjer dere bruker - bruk heller flere enn færre - det er kun funksjonalitet som har noe å si her*
+Nei, jeg tror ikke det. Min implementasjon, med kommentarer og output-tekst er på under 400 linjer. `(cat *.cpp | wc -l)`. Den tok 6-7 timer å lage, og da ble også designet bearbeidet underveis. *OBS: Det er på ingen måte relevant hvor mange linjer dere bruker - bruk heller flere enn færre - det er kun funksjonalitet som har noe å si her*
