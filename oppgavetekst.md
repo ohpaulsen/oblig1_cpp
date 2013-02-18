@@ -35,7 +35,6 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
 **PS:** *Ikke vær bekymret for å vise "tabber" eller gammel, dårlig kode i historikken - det er bare fint. Det eneste som har noe å si er resultatet til slutt.*
 
 ##Forslag til fremgangsmåte i prioritert rekkefølge 
-**OBS:** *Dette er kun et forslag for å hjelpe deg i gang - delmålene under veis vil ikke sjekkes dersom alt er på plass til slutt*
 1. Lag en fungerende kort og kortstokk med 52 kort
 3. Skriv en funksjon (evt. del av start()) i blackjackGame, som avgjør hvor mange poeng en hånd (vector av kort) gir. Vurder om dette bør være del av en funksjon, en medlemsfunksjon eller en frittstående funksjon. Husk at du kan redigere *class_blackjackGame.h*, men ikke andre header-filer.
 2. Funksjonene blackjackGame::playRound() og blackjackGame::start() må inneholde et *minimum* av funksjonalitet:
@@ -49,7 +48,7 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
 8. Implementer veddemål, slik at spiller kan angi et veddemål som trekkes fra "wallet", og så få riktig sum tilbake, hvis man vinner. 
 9. Finn en trygg løsning for håndtering av pekerne som brukes (se læringsmål)
 10. Lag enkle, men solide løsninger for å håndtere feil som kan oppstå, feks. ugyldig input fra bruker
-
+**OBS:** *Dette er kun et forslag for å hjelpe deg i gang - delmålene under veis vil ikke sjekkes dersom alt er på plass til slutt*
 
 ##Læringsmål
 ###Generelle hovedmål er å vise at man har tilegnet seg
