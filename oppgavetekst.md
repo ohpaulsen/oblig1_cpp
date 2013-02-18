@@ -18,7 +18,7 @@ Blackjack er et kortspill som handler om å få så nært "21" som mulig, uten �
    - Hvis dealer kommer nærmere 21 enn spilleren uten å gå over, vinner dealer spillerens innsats
 6. Dersom dealer og spiller ender på det samme, heter det "Push" - da vinner ingen. Dette gjelder ikke dersom det ble blackjack.
 
-Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere detaljer i rulebook.md
+Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere detaljer i rules.md
 
 ##Det som skal programmeres
 - For hver klasse class_*.h, skal du skrive implementasjonen class_*.cpp (med mindre klassen er abstrakt og du finner det unødig å implementere)
@@ -27,12 +27,16 @@ Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere d
   - Starte et blackjackspill med en spiller og en dealer
   - Spilleren skal hente alle beslutninger fra brukeren, via standard input
 - Du skal *ikke* endre på header-filene (.h), med unntak av *blackjackGame.h*, der du kan legge til medlemmer, men ikke fjerne.
+- Det er ikke nødvendig å lage flere klasser. Det er lov, men det bør da motiveres med noen linjer i rapporten.
+
+##Bruk av git underveis
+Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy. Det anbefales at du kloner git-repositoryet, og jobber direkte i din egen lokale klone (legg den gjerne i dropbox, så får du automatisk backup). Din .git-mappe, med commit-log skal være en del av innleveringen - det anbefales derfor at du committer lokalt hver gang du har implementert noe nytt, slik at loggen blir leselig og viser din fremgangsmåte. **PS:** *Ikke vær bekymret for å vise "tabber" eller gammel, dårlig kode historikken - det er bare fint. Det eneste som har noe å si er resultatet til slutt.*
 
 ##Prioritetsliste - hva er viktigst å implementere? 
 1. Fungerende kort og kortstokk med 52 kort
 2. blackjackGame::playRound() og blackjackGame::start() - dette er selve spillmekanismen.    
 3. En funksjon i blackjackGame.cpp, som avgjør hvor mange poeng en hånd (vector av kort) gir
-*Mer kommer*
+4. *Mer kommer*
 
 ##Læringsmål - hva dere skal vise at dere kan
 *Kommer*
@@ -42,7 +46,7 @@ Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere d
   - Beskrive implementasjonen, gjerne trekke frem ting du synes var interessant eller vanskelig
   - Diskutere et alternativt programdesign, hvis du har et, eller idéer til et. Er det noe du ville gjort anderledes? Noe du hadde gort anderledes, som gir fordeler eller ulemper?
   - Du kan legge ved din alternative implementasjon, i en mappe kalt "alt" i rotmappen i ditt "repository.
-  - Rapporten skal hete "rapport.md" og ligge i rotmappen i ditt "repository"
+  - Rapporten skal hete "rapport.md" og ligge i rotmappen i ditt "repository" (mer info om dette senere)
   
 ##Hvordan du blir vurdert
 - Hver klasse vil bli vurdert for seg, og gi et antall poeng
@@ -50,4 +54,4 @@ Det finnes to regler til, "DOUBLE" og "SPLIT". Disse skal du vente med.  Flere d
 - Helheten blir vurdert og gir et antall poeng
 
 ##Er dette for mye?
-Nei, jeg tror ikke det. Min implementasjon, med kommentarer og output-tekst er på under 400 linjer. (cat *.cpp | wc -l). Den tok 6-7 timer å lage, og da ble også designet bearbeidet underveis. *Det er på ingen måte relevant hvor mange linjer dere bruker - bruk heller flere enn færre - det er kun funksjonalitet som har noe å si her*
+Nei, jeg tror ikke det. Min implementasjon, med kommentarer og output-tekst er på under 400 linjer. `(cat *.cpp | wc -l)`. Den tok 6-7 timer å lage, og da ble også designet bearbeidet underveis. *Det er på ingen måte relevant hvor mange linjer dere bruker - bruk heller flere enn færre - det er kun funksjonalitet som har noe å si her*
