@@ -48,7 +48,8 @@ Som nevnt på forelesning håper vi å kunne bruke git som innleveringsverktøy.
 8. Implementer veddemål, slik at spiller kan angi et veddemål som trekkes fra "wallet", og så få riktig sum tilbake, hvis man vinner. 
 9. Finn en trygg løsning for håndtering av pekerne som brukes (se læringsmål)
 10. Lag enkle, men solide løsninger for å håndtere feil som kan oppstå, feks. ugyldig input fra bruker
-**OBS:** *Dette er kun et forslag for å hjelpe deg i gang - delmålene under veis vil ikke sjekkes dersom alt er på plass til slutt*
+
+**OBS:** *Dette er kun et forslag for å hjelpe deg i gang - delmålene under veis vil ikke sjekkes dersom alt er på plass til slutt.*
 
 ##Læringsmål
 ###Generelle hovedmål er å vise at man har tilegnet seg
