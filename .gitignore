@@ -11,3 +11,17 @@
 *.lai
 *.la
 *.a
+
+
+#Emacs garbage
+*~
+
+# C++ implementation (! hide from students !)
+*.cpp
+
+# Project-specific binary
+blackjack
+
+#Private notes
+*.txt
+*.priv
