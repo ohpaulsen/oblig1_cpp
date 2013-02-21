@@ -16,8 +16,8 @@
 #Emacs garbage
 *~
 
-# C++ implementation (! hide from students !)
-*.cpp
+# C++ implementation
+# *.cpp
 
 # Project-specific binary
 blackjack
