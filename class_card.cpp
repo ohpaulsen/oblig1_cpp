@@ -1,29 +1,24 @@
 #include "class_card.h"
-
+#include <iostream>
 using namespace cards;
 using namespace std;
 card::card(t_suit s,t_rank r)
 {
- suit = s;
- rank = r;
+ this->suit = s;
+ this->rank = r;
 }
 
 string card::name()
 {
-    string output = "";
-    output += suit_name[rank];
-    output += " ";
-    output +=ranks[suit];
-    return output;
- 
+    return "" + suit_name[this->suit] + " " + ranks[this->rank];
 }
 
 t_suit card::getSuit()
 {
-    return suit;
+    return this->suit;
 }
 
 t_rank card::getRank()
 {
-    return rank;
+    return this->rank;
 }

@@ -9,8 +9,9 @@ int main()
 {
     cards::deck k(2); //= cards::deck();
     k.shuffle();
-//    cards::card c = k.deal();
-//    cards::card d = k.deal();
+    cards::card c = k.deal();
+    cards::card d = k.deal();
     cout << k.size() << endl;
+    cout <<  c.name() << " " <<  d.name() << endl;
     return 0;
 }

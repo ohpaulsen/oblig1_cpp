@@ -38,17 +38,13 @@ void deck::shuffle()
 {
     srand(time(NULL));
     std::random_shuffle ( cards.begin(), cards.end());
-    std::cout << "Shuffling...." << std::endl;
-    for(int i=0; i< cards.size();i++ )
-    {
-        std::cout << cards[i].name();
-    }
-
 }
 
 card deck::deal()
 {
-    return *cards.begin();
+    cards::card c  = this->cards.back();
+    this->cards.pop_back();
+    return c;
 }
 
 int deck::size()
