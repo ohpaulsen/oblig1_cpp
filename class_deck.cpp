@@ -29,11 +29,6 @@ deck::deck(int deckCount)
 }
 
 
-int myrandom( int i )
-{
-return std::rand()%i;
-}
-
 void deck::shuffle()
 {
     srand(time(NULL));
