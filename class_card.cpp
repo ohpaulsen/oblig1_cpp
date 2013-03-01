@@ -20,5 +20,5 @@ t_suit card::getSuit()
 
 t_rank card::getRank()
 {
-    return this->rank;
+    return ranks[this->rank];
 }

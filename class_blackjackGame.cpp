@@ -21,11 +21,18 @@ void blackjackGame::start()
 
     //Giving start hand
     dealStartHand(1, gamblervector, dealervector, play_deck);
-
-    for(i )
-    cout << "Gambler Hand " << this->SumOfCards(gamblervector) << endl;
+    cout << "Gambler Hand";
+    for(int i=0;i < gamblervector.size();i++)
+    {
+        cout << " "<< this->dealervector[i].name();
+    }
+    cout << endl;
+    cout << "Sum of Gambler Hand " << this->SumOfCards(gamblervector) << endl;
+    
     cards::card d = this->dealervector.back();
-    cout << "Dealers Cards " << d.name() << " And X " << endl;
+    cout << endl;
+    cout << "Dealers Hand " << d.name() << " And X " << endl;
+    cout << "Sum Of Dealer Hand " << endl;
 }
 
 void blackjackGame::dealStartHand(int players,vector<card>& gamblervector, vector<card>& dealervector, cards::deck& play_deck)
@@ -49,51 +56,28 @@ void blackjackGame::playRound()
 int blackjackGame::SumOfCards(vector<card> c)
 {
     int sum = 0;
+    int bilde = 0;
+    int under = 0;
     int ess = 0;
     for(vector<card>::size_type it = 0; it != c.size(); it++)
     {
-        if(c[it].getRank() > 10)
+        cout << c[it].getRank() << endl;
+        if(!isdigit(ranks[c[it].getRank()]) && ranks[c[it].getRank()] != 'A')
+        {
             sum+=10;
-        else if(c[it].getRank() == 1)
+            bilde++;
+        }
+        else if(ranks[c[it].getRank()] == 'A')
         {
           ess++;
         }
         else{
-        sum += c[it].getRank();
+        ////cout << "ranks.. under " << (int)ranks[c[it].getRank] << endl << endl;
+        sum += (int)ranks[c[it].getRank()];
+        under++;
         }
     }
-    if(ess !=0)
-    {
-        if( ess == 1)
-        {
-            if(sum > 10)
-            {
-                sum++;
-            }
-            else
-            {
-                sum+=11;
-            }
-        }
-        else if(ess == 2 && c.size() == 2)
-        {
-            return 12;
-        }
-        else //Denne tar seg av hvis det er flere enn 2 ess på hånden.. som skjer skjeldent..
-        {
-            if(sum+ess == 21)
-            {
-                return 21;
-            }
-            for(int i=0; i > ess; i--)
-            {
-                if(sum+11 == 21 )
-                {
-                    return 21;
-                }
-            }
-        }
-    }
+    cout << "Bilde " << bilde << " under " << under << " ess " << ess << endl;
     return sum;
 
 }
