@@ -1,14 +1,19 @@
 #ifndef CLASS_BLACKJACKGAME_H
 #define CLASS_BLACKJACKGAME_H
 
-
 #include "class_game.h"
+#include "class_card.h"
+#include "class_deck.h"
 
+using std::vector;
 namespace casino{
   
   class blackjackGame : public game 
   {
-    
+    vector<cards::card> gamblervector;
+    vector<cards::card> dealervector;
+    cards::deck play_deck;
+    int players;
     //Overridden from game
     virtual void playRound();
     
@@ -20,6 +25,10 @@ namespace casino{
     //Overridden from game
     virtual void start();
     
+    //Sum of hand
+    int SumOfCards(vector<cards::card> c);
+
+    void dealStartHand(int players, vector<cards::card>& gambler, vector<cards::card>& dealer, cards::deck& play_deck);
   };
 
 }

@@ -1,17 +1,16 @@
 #include <iostream>
 #include "class_deck.h"
 #include "class_card.h"
+#include "class_blackjackGame.h"
+#include "class_game.h"
+#include <vector>
 //#include "class_deck.cpp"
 using namespace std;
 //using namespace cards;
 
 int main()
 {
-    cards::deck k(2); //= cards::deck();
-    k.shuffle();
-    cards::card c = k.deal();
-    cards::card d = k.deal();
-    cout << k.size() << endl;
-    cout <<  c.name() << " " <<  d.name() << endl;
+    casino::blackjackGame c;
+    c.start();
     return 0;
 }
