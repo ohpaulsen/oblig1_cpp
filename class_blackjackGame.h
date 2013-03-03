@@ -4,7 +4,8 @@
 #include "class_game.h"
 #include "class_card.h"
 #include "class_deck.h"
-
+#include "class_blackjackState.h"
+#include "class_gameState.h"
 using std::vector;
 namespace casino{
   
@@ -13,6 +14,7 @@ namespace casino{
     vector<cards::card> gamblervector;
     vector<cards::card> dealervector;
     cards::deck play_deck;
+    gameState *b;
     int players;
     //Overridden from game
     virtual void playRound();
@@ -27,7 +29,8 @@ namespace casino{
     
     //Sum of hand
     int SumOfCards(vector<cards::card> c);
-
+    bool printCardSum();
+    void winner();
     void dealStartHand(int players, vector<cards::card>& gambler, vector<cards::card>& dealer, cards::deck& play_deck);
   };
 

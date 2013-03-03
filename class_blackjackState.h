@@ -14,7 +14,7 @@ namespace casino
     std::vector< std::vector<cards::card> > cardsDealt;
   
     //Location of "my cards" in cardsDealt 
-    int ourHero;  
+    int ourHero;
     //Location of dealers cards in cardsDealt
     int dealer;
   
