@@ -24,6 +24,9 @@ blackjackGame::blackjackGame(int players) : game::game(blackjack,players)
 
 void blackjackGame::start()
 {
+
+    cout << endl;
+    cout << "NEW GAME OF BLACKJACK " << endl;
     cout << endl;
     play_deck.shuffle();
 
@@ -33,12 +36,13 @@ void blackjackGame::start()
     //Dealers hand
     cards::card d = this->dealervector.back();
     cout << "Dealers Hand " << d.name() << " And X " << endl;
-    //cout << "Sum Of Dealer Hand " << endl;
     playRound();
 }
 
 void blackjackGame::dealStartHand(int players,vector<card>& gamblervector, vector<card>& dealervector, cards::deck& play_deck)
 {
+    gamblervector.clear();
+    dealervector.clear();
     for(int i=0;i<players;i++)
     {
         for(int p=0;p<2;p++)
@@ -70,8 +74,6 @@ bool blackjackGame::printCardSum()
  
 void blackjackGame::playRound()
 {
-    //bool temp = false;
-    ///temp = printCardSum();
     vector<vector<cards::card> > cardv;
     cardv.push_back(dealervector);
     cardv.push_back(gamblervector);
@@ -79,26 +81,30 @@ void blackjackGame::playRound()
     g->print();
     if(printCardSum())
     {
-        cout << "Press H for Hit And S for Stand" << endl;
-        string myString = "";
-        cin >> myString;
         action* a = new blackjackAction(controlType(1));
         blackjackAction* action = static_cast<blackjackAction *> (a);
-        //action->print();
-        //action->actionType = actionType(2);
-        if(myString.compare("STAND") == 0)
+        blackjackAction::atype temp = action->getAtype();
+        cout << "temp: " <<temp << endl;
+        if(temp == blackjackAction::atype(2))
         {
-
             winner();
-            //start();
+            start();
             return;
-        }else if(myString.compare("HIT") == 0)
+        }else if(temp == blackjackAction::atype(1))
         {
             this->gamblervector.push_back(play_deck.deal());
+            delete g;
+            delete a;
             playRound();
         }else{
-            cout << "Ingen gyldig komando" << endl;
+           delete a;
+           playRound();
         }
+    }
+    else
+    {
+        delete g;
+        start();
     }
 
 }
