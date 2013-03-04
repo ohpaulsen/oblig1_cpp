@@ -5,6 +5,10 @@
 #include "class_card.h"
 #include "class_deck.h"
 #include "class_gameState.h"
+#include "class_blackjackAction.h"
+#include "class_action.h"
+#include "controlTypes.h"
+#include "gameTypes.h"
 #include <vector>
 #include <string>
 #include <iostream>
@@ -78,8 +82,13 @@ void blackjackGame::playRound()
         cout << "Press H for Hit And S for Stand" << endl;
         string myString = "";
         cin >> myString;
+        action* a = new blackjackAction(controlType(1));
+        blackjackAction* action = static_cast<blackjackAction *> (a);
+        //action->print();
+        //action->actionType = actionType(2);
         if(myString.compare("STAND") == 0)
         {
+
             winner();
             //start();
             return;
