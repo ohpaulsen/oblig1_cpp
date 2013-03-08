@@ -28,6 +28,10 @@ void blackjackGame::start()
     cout << endl;
     cout << "NEW GAME OF BLACKJACK " << endl;
     cout << endl;
+    if(play_deck.size() > 7)
+    {
+        play_deck = cards::deck(2);
+    }
     play_deck.shuffle();
 
     //Giving start hand
@@ -84,7 +88,6 @@ void blackjackGame::playRound()
         action* a = new blackjackAction(controlType(1));
         blackjackAction* action = static_cast<blackjackAction *> (a);
         blackjackAction::atype temp = action->getAtype();
-        cout << "temp: " <<temp << endl;
         if(temp == blackjackAction::atype(2))
         {
             winner();
