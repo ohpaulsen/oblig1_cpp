@@ -20,16 +20,16 @@ blackjackGame::blackjackGame(int players) : game::game(blackjack,players)
 {
     this->players = players; 
     play_deck = cards::deck(2);
+    gambler me("ole","henrik");
 }
 
 void blackjackGame::start()
 {
-
     cout << endl;
     cout << "NEW GAME OF BLACKJACK " << endl;
     cout << endl;
-    if(play_deck.size() > 7)
-    {
+    me.placeBet();
+    if(play_deck.size() > 7){
         play_deck = cards::deck(2);
     }
     play_deck.shuffle();
@@ -47,10 +47,8 @@ void blackjackGame::dealStartHand(int players,vector<card>& gamblervector, vecto
 {
     gamblervector.clear();
     dealervector.clear();
-    for(int i=0;i<players;i++)
-    {
-        for(int p=0;p<2;p++)
-        {
+    for(int i=0;i<players;i++){
+        for(int p=0;p<2;p++){
             gamblervector.push_back(play_deck.deal());
         }
     }
@@ -62,13 +60,10 @@ void blackjackGame::dealStartHand(int players,vector<card>& gamblervector, vecto
 bool blackjackGame::printCardSum()
 {
     cout << "Sum of Gambler Hand " << this->SumOfCards(gamblervector) << endl;
-    if(this->SumOfCards(gamblervector) == 21 && gamblervector.size() == 2)
-    {
+    if(this->SumOfCards(gamblervector) == 21 && gamblervector.size() == 2){
         cout << "BLACKJACK" << endl;
         return false;
-    }
-    if(this->SumOfCards(gamblervector) > 21 )
-    {
+    } if(this->SumOfCards(gamblervector) > 21 ){
         cout << "BURST" << endl;
         return false;
     }
@@ -83,18 +78,15 @@ void blackjackGame::playRound()
     cardv.push_back(gamblervector);
     gameState* g = new blackjackState(cardv,1,0);
     g->print();
-    if(printCardSum())
-    {
+    if(printCardSum()){
         action* a = new blackjackAction(controlType(1));
         blackjackAction* action = static_cast<blackjackAction *> (a);
         blackjackAction::atype temp = action->getAtype();
-        if(temp == blackjackAction::atype(2))
-        {
+        if(temp == blackjackAction::atype(2)){
             winner();
             start();
             return;
-        }else if(temp == blackjackAction::atype(1))
-        {
+        }else if(temp == blackjackAction::atype(1)){
             this->gamblervector.push_back(play_deck.deal());
             delete g;
             delete a;
@@ -104,19 +96,17 @@ void blackjackGame::playRound()
            playRound();
         }
     }
-    else
-    {
+    else{
         delete g;
         start();
     }
-
 }
 
 void blackjackGame::winner()
 {
     cout << "Gambler have " << this->SumOfCards(gamblervector) << endl;
     cout << "Dealer have " << this->SumOfCards(dealervector) << endl;
-        if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector) )
+        if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector))
             cout << "Gambler wins.." << endl;
         else
             cout << "Dealer wins.." << endl;
