@@ -10,6 +10,9 @@
 #include "controlTypes.h"
 #include "gameTypes.h"
 #include <vector>
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
 #include <string>
 #include <iostream>
 using namespace std;
@@ -20,15 +23,21 @@ blackjackGame::blackjackGame(int players) : game::game(blackjack,players)
 {
     this->players = players; 
     play_deck = cards::deck(2);
-    gambler me("ole","henrik");
+    me = gambler("ole","henrik");
+    cout << "How much cash do you have.. ?" << endl;
+    string myString;
+    cin >> myString;
+    cash value = ::atof(myString.c_str());
+    me.giveMoney(value);
 }
 
 void blackjackGame::start()
 {
+    bet = 0;
     cout << endl;
     cout << "NEW GAME OF BLACKJACK " << endl;
     cout << endl;
-    me.placeBet();
+    this->bet = me.placeBet();
     if(play_deck.size() > 7){
         play_deck = cards::deck(2);
     }
@@ -62,6 +71,8 @@ bool blackjackGame::printCardSum()
     cout << "Sum of Gambler Hand " << this->SumOfCards(gamblervector) << endl;
     if(this->SumOfCards(gamblervector) == 21 && gamblervector.size() == 2){
         cout << "BLACKJACK" << endl;
+        bet += bet*1,5;
+        me.giveMoney(bet);
         return false;
     } if(this->SumOfCards(gamblervector) > 21 ){
         cout << "BURST" << endl;
@@ -106,9 +117,11 @@ void blackjackGame::winner()
 {
     cout << "Gambler have " << this->SumOfCards(gamblervector) << endl;
     cout << "Dealer have " << this->SumOfCards(dealervector) << endl;
-        if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector))
+        if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector)){
+            bet += bet;
+            me.giveMoney(bet);
             cout << "Gambler wins.." << endl;
-        else
+        }else
             cout << "Dealer wins.." << endl;
 }
 

@@ -17,6 +17,7 @@ namespace casino{
     cards::deck play_deck;
     gameState *b;
     gambler me;
+    float bet;
     int players;
     //Overridden from game
     virtual void playRound();

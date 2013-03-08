@@ -13,26 +13,28 @@ gambler::gambler(string fname,string lname)
 {
     this->firstName = fname;
     this->lastName = lname;
-    this->wallet = 1000;
+    this->wallet = 0;
     this->gamblerId = 1; //gamblerNr++;
     this->readyToPlay = true;
 }
 
 cash gambler::placeBet()
 {
-    cout << "You have " << wallet << "$" << endl;
+    //this->wallet = 100;
+    cout << "You have " << (cash)wallet << "$" << endl;
     cout << "place a bet.." << endl;
     string myString = "";
     cin >> myString;
-    int value = atoi(myString.c_str());
-    if(value > 0)
+    cash value = ::atof(myString.c_str());
+    if(value > 0 && value =< wallet)
     {
-        this->wallet - value;
+        wallet -= value;
+        return value;
     }
     else
     {
-        cout << "Du må skrive ett positivt tall..." << endl;
-        this->placeBet();
+        cout << "Du må skrive ett positivt tall og du kan ikke bette mer enn du har." << endl;
+        return this->placeBet();
     }
     
 }
