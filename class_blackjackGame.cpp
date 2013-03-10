@@ -122,8 +122,8 @@ void blackjackGame::winner()
     cout << "Gambler have " << this->SumOfCards(gamblervector) << endl;
     cout << "Dealer have " << this->SumOfCards(dealervector) << endl;
         if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector)){
-            bet += bet;
-            me.giveMoney(bet);
+            //bet += bet;
+            me.giveMoney(bet*2);
             cout << "Gambler wins.." << endl;
         }else
             cout << "Dealer wins.." << endl;

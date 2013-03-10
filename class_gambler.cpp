@@ -51,7 +51,7 @@ action* gambler::takeAction(gameState* g)
 
 void gambler::giveMoney(cash amount)
 {
-    this->wallet = amount;
+    this->wallet += amount;
 }
 
 bool gambler::ready()
