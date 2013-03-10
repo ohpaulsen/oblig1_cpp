@@ -38,6 +38,7 @@ namespace casino{
     bool printCardSum();
     void winner();
     void dealStartHand(int players, vector<cards::card>& gambler, vector<cards::card>& dealer, cards::deck& play_deck);
+    void dealerPlay();
   };
 
 }
