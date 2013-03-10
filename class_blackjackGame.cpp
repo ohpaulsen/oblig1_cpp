@@ -88,13 +88,12 @@ void blackjackGame::playRound()
     cardv.push_back(dealervector);
     cardv.push_back(gamblervector);
     gameState* g = new blackjackState(cardv,1,0);
-    cout << "printer ut kort..." << endl;
     g->print();
     blackjackStrategy* bS = new blackjackStrategy(controlType(2));
-    action* a = bS->takeAction(g);
-    blackjackAction * action = static_cast<blackjackAction *> (a);
-    blackjackAction::atype temp = action->getAtype(); //type temp = action->getAtype();
     if(printCardSum()){
+        action* a = bS->takeAction(g);
+        blackjackAction * action = static_cast<blackjackAction *> (a);
+        blackjackAction::atype temp = action->getAtype();
         if(temp == blackjackAction::atype(2)){
             winner();
             start();
