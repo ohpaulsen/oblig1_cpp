@@ -138,11 +138,12 @@ void blackjackGame::winner()
 
 void blackjackGame::dealerPlay()
 {
-    while(this->SumOfCards(dealervector)  <= 17 || this->SumOfCards(dealervector) > this->SumOfCards(gamblervector))
-    {
+    int i = 0;
+    int temp = this->SumOfCards(dealervector);
+    while((this->SumOfCards(dealervector) < 17) || (this->SumOfCards(dealervector) < this->SumOfCards(gamblervector))){
         this->dealervector.push_back(play_deck.deal());
+        cout << i << endl;
     }
-
 }
 
 int blackjackGame::SumOfCards(vector<card> c)
