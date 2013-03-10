@@ -71,7 +71,7 @@ bool blackjackGame::printCardSum()
     cout << "Sum of Gambler Hand " << this->SumOfCards(gamblervector) << endl;
     if(this->SumOfCards(gamblervector) == 21 && gamblervector.size() == 2){
         cout << "BLACKJACK" << endl;
-        bet += bet*1,5;
+        bet = bet*2,5;
         me.giveMoney(bet);
         return false;
     } if(this->SumOfCards(gamblervector) > 21 ){
@@ -110,8 +110,7 @@ void blackjackGame::playRound()
            delete bS;
            playRound();
         }
-    }
-    else{
+    }else{
         delete g;
         start();
     }
@@ -120,8 +119,7 @@ void blackjackGame::playRound()
 void blackjackGame::winner()
 {
     dealerPlay();
-    if(this->SumOfCards(dealervector) > 21)
-    {
+    if(this->SumOfCards(dealervector) > 21){
         cout << "Dealer busted.. Gambler wins.." << endl;
         me.giveMoney(bet*2);
         return;
@@ -129,21 +127,18 @@ void blackjackGame::winner()
     cout << "Gambler have " << this->SumOfCards(gamblervector) << endl;
     cout << "Dealer have " << this->SumOfCards(dealervector) << endl;
         if(this->SumOfCards(gamblervector) > this->SumOfCards(dealervector)){
-            //bet += bet;
             me.giveMoney(bet*2);
             cout << "Gambler wins.." << endl;
-        }else if(this->SumOfCards(gamblervector) == this->SumOfCards(dealervector))
-        {
+        }else if(this->SumOfCards(gamblervector) == this->SumOfCards(dealervector)){
             cout << "DRAW..." << endl;
             me.giveMoney(bet);
-
         }else
             cout << "Dealer wins.." << endl;
 }
 
 void blackjackGame::dealerPlay()
 {
-    while(this->SumOfCards(dealervector)  <= 17)
+    while(this->SumOfCards(dealervector)  <= 17 || this->SumOfCards(dealervector) > this->SumOfCards(gamblervector))
     {
         this->dealervector.push_back(play_deck.deal());
     }
