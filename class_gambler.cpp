@@ -26,7 +26,7 @@ cash gambler::placeBet()
     string myString = "";
     cin >> myString;
     cash value = ::atof(myString.c_str());
-    if(value > 0 && value =< wallet)
+    if(value > 0 && value <= wallet)
     {
         wallet -= value;
         return value;

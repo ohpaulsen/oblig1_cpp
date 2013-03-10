@@ -4,6 +4,7 @@
 #include "class_game.h"
 #include "class_card.h"
 #include "class_deck.h"
+#include "class_blackjackStrategy.h"
 #include "class_gameState.h"
 #include "class_blackjackAction.h"
 #include "class_action.h"
@@ -33,7 +34,6 @@ blackjackGame::blackjackGame(int players) : game::game(blackjack,players)
 
 void blackjackGame::start()
 {
-    bet = 0;
     cout << endl;
     cout << "NEW GAME OF BLACKJACK " << endl;
     cout << endl;
@@ -88,22 +88,26 @@ void blackjackGame::playRound()
     cardv.push_back(dealervector);
     cardv.push_back(gamblervector);
     gameState* g = new blackjackState(cardv,1,0);
+    cout << "printer ut kort..." << endl;
     g->print();
+    blackjackStrategy* bS = new blackjackStrategy(controlType(2));
+    action* a = bS->takeAction(g);
+    blackjackAction * action = static_cast<blackjackAction *> (a);
+    blackjackAction::atype temp = action->getAtype(); //type temp = action->getAtype();
     if(printCardSum()){
-        action* a = new blackjackAction(controlType(1));
-        blackjackAction* action = static_cast<blackjackAction *> (a);
-        blackjackAction::atype temp = action->getAtype();
         if(temp == blackjackAction::atype(2)){
             winner();
             start();
             return;
-        }else if(temp == blackjackAction::atype(1)){
+        }if(temp == blackjackAction::atype(1)){
             this->gamblervector.push_back(play_deck.deal());
             delete g;
             delete a;
+            delete bS;
             playRound();
         }else{
            delete a;
+           delete bS;
            playRound();
         }
     }

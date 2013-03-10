@@ -17,13 +17,12 @@ void blackjackAction::print()
     cout << "Press H OR STAND" << endl;
     string myString = "";
     cin >> myString;
-    if(myString.compare("STAND") == 0)
+    if(myString.compare("STAND") == 0 || myString.compare("S") == 0)
     {
         this->actionType = atype(2);
     }
-    else if(myString.compare("HIT") == 0)
+    else if(myString.compare("HIT") == 0 || myString.compare("H") == 0)
     {
-        cout << "HIT-.-" << endl;
         this->actionType = atype(1);
     }
     else

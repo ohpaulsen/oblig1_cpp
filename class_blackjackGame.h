@@ -7,6 +7,8 @@
 #include "class_blackjackState.h"
 #include "class_gameState.h"
 #include "class_gambler.h"
+#include "class_blackjackStrategy.h"
+#include "class_strategy.h"
 using std::vector;
 namespace casino{
   
@@ -16,6 +18,7 @@ namespace casino{
     vector<cards::card> dealervector;
     cards::deck play_deck;
     gameState *b;
+    //blackjackStrategy bS;
     gambler me;
     float bet;
     int players;
